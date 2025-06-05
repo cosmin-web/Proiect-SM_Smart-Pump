@@ -50,22 +50,34 @@ Următorii pași descriu modul de pregătire și implementare a proiectului, ast
 
 > Notă: Asigurați-vă că toate componentele au masa (GND) comună pentru a funcționa corect.
 
-### 4. Implementarea logicii în cod
+### 4. Implementarea logicii în codAdd commentMore actions
 
-1. Deschideți un fișier nou în Thonny și lipiți codul furnizat (main.py).  
-2. Configurați rețeaua Wi-Fi în variabilele SSID și PASS.  
-3. Ajustați pragurile de udare și indicatori în cod:  
-4. Salvați fișierul cu numele main.py pe placa Pico 2W.
+1. Deschideți un fișier nou în Thonny și lipiți codul furnizat (`main.py`).
+2. Configurați rețeaua Wi-Fi:
+
+   ```python
+   SSID = 'NumeleRețelei'
+   PASS = 'ParolaWiFi'
+   ```
+3. Ajustați pragurile după preferințe:
+
+   ```python
+   MIN_WATER_PCT = 20.0      # Prag minim apă (%) pentru a permite udarea manuală
+   SOIL_TARGET = 40.0        # Umiditate țintă a solului (%)
+   LED_ON_THRESHOLD = 30.0   # Prag pornire LED (% apă)
+   LED_OFF_THRESHOLD = 90.0  # Prag oprire LED (% apă)
+   ```
+4. Salvați fișierul cu numele `main.py` pe placa Pico W.
 
 ### 5. Testare și utilizare
 
-1. După salvare, Pico 2W va reporni și va inițializa serverul web.  
-2. În consola Thonny, va apărea adresa IP locală a plăcii, de exemplu 192.168.4.2.  
-3. Deschideți un browser web și accesați adresa IP afișată.  
-4. Veți vedea o interfață web cu:  
-* Indicatori grafici pentru nivelul apei și umiditatea solului  
-* Buton pentru pornirea manuală a pompei, activabil doar dacă nivelul apei este suficient  
-5. Monitorizați în timp real și ajustați pragurile după nevoie.
+1. După salvare, Pico W va reporni și va inițializa serverul web.
+2. Deschideți un browser și accesați IP-ul afișat în consola Thonny (de exemplu `http://192.168.4.2`).
+3. Interfața web afișează:
+
+   * **Indicatori analogici** pentru nivelul apei și umiditatea solului
+   * **Buton** pentru pornirea manuală a pompei atunci când nivelul apei este suficient
+4. Monitorizați și reglați parametrii după necesități.
 
 ---
 
